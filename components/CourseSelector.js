@@ -4,7 +4,7 @@ import React, { useState } from 'react';
  import Course from './Course';
  import { hasConflict } from '../utils/course';
 
-const CourseSelector = ({courses}) => {
+const CourseSelector = ({courses, view}) => {
     const [selected, setSelected] = useState([]);
 
     const toggle = course => setSelected(selected => (
@@ -15,7 +15,7 @@ const CourseSelector = ({courses}) => {
       <View style={styles.courseList}>
         { 
           courses.map(course => (
-            <Course key={course.id} course={course} 
+            <Course key={course.id} course={course} view = {view}
                          select={toggle}
                          isDisabled={hasConflict(course, selected)}
                          isSelected={selected.includes(course)}
