@@ -11,7 +11,7 @@ const Field = ({label, value}) => {
 };
 
 const CourseDetailScreen = ({route}) => {
-    const course = route.params.course;
+  const course = route.params.course;
 
   return (
     <SafeAreaView style={styles.container}>
